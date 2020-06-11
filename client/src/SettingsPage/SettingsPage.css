@@ -1,0 +1,28 @@
+.settings_title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.settings_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.settings_desc{
+    width: 35%;
+}
+.settings_cont{
+    width: 60%;
+}
+.settings_desc h2{
+    font-size: 17px;
+}
+.settings_cont input{
+    border: 0;
+    margin-bottom: 0;
+    height: unset;
+    font-size: 13px;
+    -webkit-text-fill-color: unset;
+    background: unset;
+}

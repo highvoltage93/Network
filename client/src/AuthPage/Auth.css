@@ -1,0 +1,66 @@
+.auth{
+    height: 100%;
+  
+   position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1zDstzMkukHmJy7o7O2fqPQ_1vOS31DWCD7wCgXeLTvf4VUr9&usqp=CAU"); */
+    background-image: linear-gradient(to right top, #8aa3eb, #89a4ea, #88a5ea, #88a6e9, #87a7e8, #7dafef, #73b7f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    filter: blur(30px);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form h3{
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: 400;
+}
+.form{
+    padding: 25px;
+    border-radius: 20px;
+    min-width: 400px;
+    z-index: 2;
+    background: #fff;
+    background-image: linear-gradient(to right top, #80d8ff, #7cd5fd, #77d2fb, #73d0f9, #6ecdf7, #69cbf6, #64c8f5, #5ec6f4, #56c4f4, #4ec1f5, #45bff5, #3bbcf6);
+}
+.form .btn{
+    margin-top: 50px;
+}
+.btn{
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: .3s all;
+    background-image: linear-gradient(to right top, #f02652, #fa006d, #fd008d, #f800b0, #e913d6);
+}
+.btn:hover{
+    transition: .3s all;
+    background-image: linear-gradient(to right top, #ee1141, #f60060, #f60082, #ee00a6, #da23ca);
+}
+form{
+    padding-top: 20px;
+}

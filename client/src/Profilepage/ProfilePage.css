@@ -1,0 +1,68 @@
+.profile_page{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-left{
+    width: 40%;
+}
+.profile-right{
+    width: 58%;
+}
+.profile-left img{
+    width: 100%;
+    border-radius: 5px;
+    height: 200px;
+}
+.profile-right h3{
+    font-size: 20px;
+    background: -webkit-linear-gradient(#656cff, #001c5b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Ubuntu;
+    display: inline;
+    margin-right: 20px;
+}
+.register-date{
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 0px;
+}
+.profile_status{
+    margin-top: 5px;
+    font-size: 15px;
+    color: #8e8a8a;
+}
+.profile_item{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.profile_item p{
+    width: 140px;
+    font-size: 17px;
+    font-family: Ubuntu;
+    color: #2e2e2e;
+    font-weight: 500;
+}
+.profile_item span{
+    font-size: 15px;
+    font-family: Ubuntu;
+    font-weight: 500;
+    background: -webkit-linear-gradient(#656cff, #001c5b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.posts_page{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgb(189, 186, 186);
+}
+/* .postPicture{
+    width: 400px;
+    height: 200px;
+    margin-top: 10px;
+    object-fit: cover;
+} */
+.like .liked{
+    color: #1a4ee0;
+}

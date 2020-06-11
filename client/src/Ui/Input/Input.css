@@ -1,0 +1,24 @@
+input{
+    display: block;
+    margin-bottom: 15px;
+    height: 30px;
+    padding: 0 10px;
+    border: 0;
+    width: 95%;
+    outline: none;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+    border-bottom: 3px;
+    border-style: solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #1984e9, #23a8ff);
+    background: -webkit-linear-gradient(#2e37ef, #2aa5b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+input::placeholder{
+    background: -webkit-linear-gradient(#2e37ef, #2aa5b9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

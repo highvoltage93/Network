@@ -1,0 +1,40 @@
+.auth-wrapper{
+    height: 100%;
+    padding-top: 70px;
+    flex-wrap: wrap;
+}
+.block{
+    text-align: center;
+    padding: 10px;
+    max-height: 200px;
+    margin-bottom: 50px;
+}
+.auth-p{
+    background: -webkit-linear-gradient(#2e37ef, #2aa5b9);
+    font-size: 19px;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    z-index: 2;
+}
+.block small{
+    color: #000000;
+    font-weight: 600;
+    font-size: 15px;
+}
+.auth-block h3{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 10px 0;
+    font-family: Ubuntu;
+}
+select{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border-style: solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #1984e9, #23a8ff);
+    outline: none;
+}

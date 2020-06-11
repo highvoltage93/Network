@@ -1,0 +1,19 @@
+button{
+    height: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-image: linear-gradient(to right, #f43e54, #f55056, #f66059, #f76e5e, #f77b63);
+    color: #ffffff;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    transition: .4s all;
+}
+button:hover{
+    background-image: linear-gradient(to right,  #e01409, #f02f1a, #f77b63, #f43e54, #f53137);
+    transition: .4s all;
+}

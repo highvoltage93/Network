@@ -1,0 +1,20 @@
+body,html,#root, .App{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+*{
+  margin: 0;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.conainer-nav{
+  width: 350px;
+}
+.conainer-content{
+  width: calc(100% - 400px);
+  background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
+  padding: 50px 40px;
+}

@@ -1,0 +1,6 @@
+{
+    "PORT": "7777",
+    "MONGO_URL": "mongodb://localhost:27017/network",
+    "JWTSecret": "my_JWT_seckret_key"
+
+}
