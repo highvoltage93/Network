@@ -25,10 +25,28 @@ const UserSchema = new Schema({
             ref: 'User'
         }
     ],
-    avatar: { type: String, },
-    gender: { type: String },
+    // friends: {
+    //     type: [{ userid: { type: Schema.Types.ObjectId, default: '', index: { unique: true, sparse: true } } }],
+    //     default: undefined
+    // },
+    city: {
+        type: String,
+        default: 'Enter your date in settings'
+    },
+    birthDay: {
+        type: Date,
+        default: Date.now()
+    },
+    avatar: {
+        type: String,
+        default: ""
+    },
+    gender: {
+        type: String
+    },
     status: { type: String, default: "Enter your status" },
     posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }]
 })
+
 
 module.exports = mongoose.model('User', UserSchema)

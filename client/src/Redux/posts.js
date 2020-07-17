@@ -31,7 +31,6 @@ export const addPostAC = (post) => ({type: ADD_POST, post})
 
 
 export const addPostThunk = (post) => {
-    debugger
     return dispatch => {
         let formdata = new FormData()
         formdata.append("post", post.post)
@@ -41,8 +40,6 @@ export const addPostThunk = (post) => {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
-                // post: post.post,
-                // post_picture: post.post_picture 
             })
             .then(res => {
                 console.log(res)

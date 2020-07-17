@@ -7,13 +7,15 @@ import { mainPageReducer } from './mainPage';
 import { postsPageReducer } from './posts';
 import { profileReducer } from './profile';
 import { newsReducer } from './news';
+import { chatReducer } from './chat';
 
 const reducer = combineReducers({
     auth: authReducer,
     mainpage: mainPageReducer,
     postPage: postsPageReducer,
     profile: profileReducer,
-    news: newsReducer
+    news: newsReducer,
+    chat: chatReducer
 })
 
 

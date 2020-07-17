@@ -9,13 +9,14 @@ const mainPageRoute = require('./routes/mainpage')
 const postsRoute = require('./routes/posts')
 const profileRoute = require('./routes/profile')
 const newsRoute = require('./routes/news')
+const chatRoute = require('./routes/chat')
 
 const server = express()
 const http = require('http').createServer(server)
-// const io = require('socket.io')(http);
+const io = require('socket.io')(http);
 
 
-server.use(bodyParser.urlencoded({extended: true}))
+server.use(bodyParser.urlencoded({ extended: true }))
 server.use(bodyParser.json())
 
 mongoose.connect(config.get('MONGO_URL'), {
@@ -31,14 +32,16 @@ http.listen(config.get('PORT'), () => {
     console.log(`server start on ${config.get('PORT')}`)
 })
 
-// io.on('connection', (socket) => {
-//     console.log('a user connected');
-//   });
+io.on('connection', (socket) => {
+    socket.emit('online', { online: true })
+    console.log('a user connected');
+});
 
 
 server.use('/auth', authRoute)
 server.use('/', mainPageRoute)
 server.use('/', postsRoute)
 server.use('/profile', profileRoute)
-server.use('/news', newsRoute )
+server.use('/news', newsRoute)
+server.use('/chat', chatRoute)
 server.use('/uploads', express.static('uploads'))

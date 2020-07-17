@@ -9,12 +9,13 @@ body,html,#root, .App{
 .container{
   display: flex;
   justify-content: space-between;
+  height: 100%;
 }
 .conainer-nav{
   width: 350px;
 }
 .conainer-content{
-  width: calc(100% - 400px);
+  width: calc(100% - 370px);
   background: linear-gradient(180deg, #F3F3FB 0%, #FDFBFD 100%);
-  padding: 50px 40px;
+  padding: 10px 20px;
 }

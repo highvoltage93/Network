@@ -5,7 +5,7 @@ button{
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-    background-image: linear-gradient(to right, #f43e54, #f55056, #f66059, #f76e5e, #f77b63);
+    background-image: linear-gradient(to right,#25408c, #152657, #112c77,  #214fd2, #0d266f);
     color: #ffffff;
     border-radius: 5px;
     outline: none;
@@ -14,6 +14,6 @@ button{
     transition: .4s all;
 }
 button:hover{
-    background-image: linear-gradient(to right,  #e01409, #f02f1a, #f77b63, #f43e54, #f53137);
+    background-image: linear-gradient(to right, #152657, #112c77,  #214fd2, #0d266f, #25408c);
     transition: .4s all;
 }

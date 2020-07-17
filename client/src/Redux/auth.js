@@ -4,31 +4,33 @@ import setAuthToken from '../Middleware/setAuthToken';
 const REGISTRATION = "REGISTRATION"
 const LOAD_USER = "LOAD_USER"
 const LOGOUT = "LOGOUT"
+const NEW_EDIT_USER = 'NEW_EDIT_USER'
+const ONLINE = "ONLINE"
 
 const initailState = {
     userId: null,
     isLoading: false,
     isAuthorized: false,
     token: localStorage.getItem("token"),
-    user: null
+    user: null,
+    online: false
 }
 
 export const authReducer = (state = initailState, action) => {
     switch (action.type) {
         case REGISTRATION:
-            debugger
             localStorage.setItem('token', action.data.token)
             return {
                 ...state,
                 ...action.data,
-                user:action.data.user,
+                user: action.data.user,
                 isAuthorized: true
             }
         case LOAD_USER:
-            return{
+            return {
                 ...state,
-                isAuthorized:true,
-                user:action.user
+                isAuthorized: true,
+                user: action.user
             }
         case LOGOUT:
             localStorage.removeItem('token')
@@ -37,14 +39,26 @@ export const authReducer = (state = initailState, action) => {
                 token: null,
                 isAuthorized: false
             }
+        case NEW_EDIT_USER:
+            return {
+                ...state,
+                user: action.user
+            }
+        case ONLINE:
+            return {
+                ...state,
+                online: action.online
+            }
         default:
             return state
     }
 }
 
 
-const registrationAC = (data) => ({type : REGISTRATION, data})
-const loadUserAc = (user) => ({type: LOAD_USER, user})
+const registrationAC = (data) => ({ type: REGISTRATION, data })
+const loadUserAc = (user) => ({ type: LOAD_USER, user })
+const newEditUserAC = (user) => ({ type: NEW_EDIT_USER, user })
+export const onlineTrue = (online) => ({type: ONLINE, online })
 
 
 export const registration = (user) => {
@@ -54,7 +68,7 @@ export const registration = (user) => {
                 name: user.name,
                 password: user.password,
                 email: user.email,
-                gender:user.gender
+                gender: user.gender
             })
             .then(res => {
                 dispatch(registrationAC(res.data))
@@ -85,5 +99,12 @@ export const loadThunk = () => {
 }
 
 export const logOutThunk = () => dispatch => {
-    dispatch({type: LOGOUT})
+    dispatch({ type: LOGOUT })
+}
+
+
+export const settingsProfileThunk = (user) => dispatch => {
+    axios
+        .patch('/profile/updateSettingsProfile', { user })
+        .then(res => dispatch(newEditUserAC(res.data)))
 }

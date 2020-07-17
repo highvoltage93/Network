@@ -43,9 +43,31 @@ module.exports.getFriends = async (req, res) => {
     const friends = await User
         .findById(req.user.id)
         .populate('friends')
-        .populate('avatar _id name')
         .exec()
 
     res.status(200)
     res.send(friends)
+}
+
+module.exports.getFriendsForProfilePage = async (req, res) => {
+    const friends = await User
+        .findById(req.params.userId.toString())
+        .populate('friends')
+        .limit(6)
+        .exec()
+
+    res.status(200)
+    res.send(friends)
+}
+
+module.exports.settingProfile = async (req, res) => {
+    const user = await User
+        .findOneAndUpdate(
+            { _id: req.user.id },
+            { $set: req.body.user },
+            { new: true }
+        )
+
+    res.status(200)
+    res.send(user)
 }

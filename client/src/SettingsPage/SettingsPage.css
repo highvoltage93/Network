@@ -1,6 +1,7 @@
 .settings_title{
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
+    color: #707C97;
 }
 .settings_item{
     display: flex;
@@ -10,13 +11,13 @@
     margin-top: 20px;
 }
 .settings_desc{
-    width: 35%;
+    width: 25%;
 }
 .settings_cont{
-    width: 60%;
+    width: 75%;
 }
 .settings_desc h2{
-    font-size: 17px;
+    font-size: 14px;
 }
 .settings_cont input{
     border: 0;
@@ -25,4 +26,15 @@
     font-size: 13px;
     -webkit-text-fill-color: unset;
     background: unset;
+}
+.settings_item .inp{
+    border: 1px solid #707C97;
+    height: 20px;
+    color: #707C97;
+}
+.settings_item .inp::placeholder{
+    color: #707C97;
+}
+.form_settings button{
+    width: 300px;
 }

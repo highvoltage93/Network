@@ -13,7 +13,8 @@ const MainPageContainer = (props) => {
  
 let mapStateToProps = (state) => {
     return{
-        allUsers: state.mainpage.allUsers
+        allUsers: state.mainpage.allUsers,
+        online: state.auth.online
     }
 }
 

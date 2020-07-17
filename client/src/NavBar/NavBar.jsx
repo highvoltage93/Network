@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './NavBar.css'
 import { NavLink } from 'react-router-dom';
-
+import UserLogo from '../Utills/Pictures/user.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faHome, faCommentDots, faUserCircle, faBell, faRss, faCog, faTh } from '@fortawesome/free-solid-svg-icons'
 import AuthContainer from '../AuthPage/AuthComponent/AuthContainer';
@@ -18,10 +18,10 @@ const NavBar = (props) => {
     return (
         <div className="navbar">
             {
-                props.auth 
+                props.auth && props.user
                     ? <div>
                         <div className="info">
-                            <img className="avatar" src={props.user.avatar ? props.user.avatar : null} alt=""/>
+                            <img className="avatar" src={props.user.avatar ? props.user.avatar : UserLogo} alt=""/>
                             <h6>{props.user.name}</h6>
                             <form>
                                 {

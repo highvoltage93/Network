@@ -1,10 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './PostsPage.css'
 
 import Image from '../Utills/Pictures/image.png'
 import PostContainer from '../Ui/Post/PostContainer';
 
 const PostsPage = (props) => {
+
+    const [img, setImg] = useState('')
+
     let data = props.posts.map(el => {
         return <PostContainer
             id={el._id}
@@ -22,6 +25,13 @@ const PostsPage = (props) => {
     const inputEl = useRef('');
 
     let onSubmit = (e) => {
+        // const fd = new FileReader()
+        // fd.readAsDataURL(e.target.post_picture.files[0])
+        // fd.onload = (e) => {
+        //     console.log(e.target.result);
+            
+        // }
+
         e.preventDefault()
         let post = {
             post: e.target.post.value,

@@ -4,11 +4,14 @@ const EDIT_STATUS = "EDIT_STATUS"
 const SET_USER_PROFILE_POSTS = "SET_USER_PROFILE_POSTS"
 const UPDATE_PROFILE_POST_AFTER_LIKE = "UPDATE_PROFILE_POST_AFTER_LIKE"
 const FRIENDS = "FRIENDS"
+const GET_FRIENDS_FOR_PRFILE = "GET_FRIENDS_FOR_PRFILE"
 
 let initialState = {
     status: '',
     userProfilePosts: [],
-    friends: []
+    friends: [],
+    fiendsItem: false,
+    profileFriends: []
 }
 
 export const profileReducer = (state = initialState, action) => {
@@ -42,6 +45,11 @@ export const profileReducer = (state = initialState, action) => {
                     return el
                 })
             }
+        case GET_FRIENDS_FOR_PRFILE:
+            return {
+                ...state,
+                profileFriends: [...action.friends]
+            }
         default:
             return state;
     }
@@ -50,7 +58,7 @@ export const profileReducer = (state = initialState, action) => {
 export const editStatusAC = (status) => ({ type: EDIT_STATUS, status })
 const setUserProfilePosts = posts => ({ type: SET_USER_PROFILE_POSTS, posts })
 const updatePostLikeAC = (post) => ({ type: UPDATE_PROFILE_POST_AFTER_LIKE, post })
-const friendsAC = (friends) => ({type: FRIENDS, friends})
+const friendsAC = (friends) => ({ type: FRIENDS, friends })
 
 export const getUserProfilePostsThunk = (profileUser) => dispatch => {
     axios
@@ -92,7 +100,7 @@ export const disLikePosts = (postId) => dispatch => {
 
 export const addFriendThunk = (userId) => dispatch => {
     axios
-        .patch('/profile/addFriend', {userId})
+        .patch('/profile/addFriend', { userId })
         .then(res => {
             console.log(res)
         })
@@ -105,3 +113,16 @@ export const friendsThunk = () => dispatch => {
             dispatch(friendsAC(res.data.friends))
         })
 }
+
+export const getFriendsForProfileThunk = (userId) => dispatch => {
+    axios
+        .get(`/profile/getFriends/${userId}`)
+        .then(res => {
+            dispatch({
+                type: GET_FRIENDS_FOR_PRFILE,
+                friends: res.data.friends
+            })
+        })
+}
+
+

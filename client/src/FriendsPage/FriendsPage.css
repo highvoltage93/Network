@@ -2,3 +2,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.all_friends{
+    color: #707C97;
+    font-size: 21px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}

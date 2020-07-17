@@ -32,7 +32,7 @@ module.exports.registration =  async (req, res) => {
                                     }
                                 }
                             jwt.sign({payload},
-                                config.get('JWTSecret'),{expiresIn: 3600},
+                                config.get('JWTSecret'),{expiresIn: 36000},
                                 (err, token) => {
                                     if(err) {throw err}
                                     res.status(200).json({
